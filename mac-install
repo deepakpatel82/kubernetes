@@ -3,3 +3,28 @@ bew install kubectl
 
 Install minikube
 brew cask install minikube
+
+install xhyve so that minicube can use xhyve
+brew install docker-machine-driver-xhyve
+
+set to run as root instead of local account with the commands provided in above step.
+
+Start a minikube with xhyve driver
+minikube start --vm-driver=xhyve
+
+for specific version:
+minikube start --vm-driver=xhyve --kubernetes-version="v1.6.0"
+
+check if kubectl is talking to minikube:
+kubectl config current-context
+
+if you want to switch to talk to production cluster you can switch context for kubectl
+
+Check nodes in the cluster:
+kubectl get nodes
+
+to stop - this only stops and keeps the cluster for further use:
+minikube stop
+
+to delete:
+minikube delete
