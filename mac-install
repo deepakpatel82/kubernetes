@@ -1,0 +1,5 @@
+Install kubectl:
+bew install kubectl
+
+Install minikube
+brew cask install minikube
